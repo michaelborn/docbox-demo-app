@@ -11,7 +11,7 @@ jobs:
 
 #       github.com/Ortus-Solutions/commandbox-action
       - name: Generate docs
-        uses: Ortus-Solutions/commandbox-action@v1.0.6
+        uses: Ortus-Solutions/commandbox-action@v1.0.2
         with:
           cmd: docbox generate mapping=demoApp excludes=testbox|coldbox|modules|tests strategy-outputDir=docs strategy-projectTitle='DocBox Demo App'
 
