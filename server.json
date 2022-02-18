@@ -1,0 +1,14 @@
+{
+    "app":{
+        "cfengine":"lucee@5.3.7"
+    },
+    "web":{
+        "host":"localhost",
+        "HTTP":{
+            "port":"33133"
+        },
+        "rewrites":{
+            "enable":"true"
+        }
+    }
+}

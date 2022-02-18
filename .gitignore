@@ -1,0 +1,25 @@
+# General Ignores + IDE
+.DS_Store
+settings.xml
+WEB-INF
+.env
+.tmp
+.vscode
+docs
+
+# logs + tests
+logs/**
+tests/results/**
+
+# npm
+**/node_modules/*
+npm-debug.log
+yarn-error.log
+
+## Ignored Dependencies
+coldbox
+testbox
+modules/*
+modules/**/apidocs/**
+docbox
+resources/assets/docs
