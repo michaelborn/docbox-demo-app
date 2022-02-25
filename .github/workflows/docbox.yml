@@ -13,7 +13,7 @@ jobs:
           fetch-depth: 0
       - uses: Ortus-Solutions/commandbox-action@v1.0.2
         with:
-          cmd: docbox generate source=. mapping=myApp strategy-outputDir=docs excludes=coldbox|testbox|modules|docbox strategy-projectTitle="My Awesome App"
+          cmd: docbox generate source=. mapping=myApp strategy-outputDir=./docs excludes=coldbox|testbox|modules|docbox strategy-projectTitle="My Awesome App"
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "📘 DOC: Auto-generate DocBox Demo App docs"
