@@ -4,18 +4,16 @@ on: push
 
 jobs:
   docs:
+    name: DocBox documentation
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the local repository
+      - name: Check out the repo code
         uses: actions/checkout@v2
-
-#       github.com/Ortus-Solutions/commandbox-action
-      - name: Generate docs
-        uses: Ortus-Solutions/commandbox-action@v1.0.2
         with:
-          cmd: docbox generate mapping=demoApp excludes=testbox|coldbox|modules|tests strategy-outputDir=docs strategy-projectTitle='DocBox Demo App'
-
-      - name: Commit Docs to Repo
-        uses: stefanzweifel/git-auto-commit-action@v4
+          fetch-depth: 0
+      - uses: Ortus-Solutions/commandbox-action@v1.0.2
         with:
-          commit_message: "📘 DOC: Auto-generate DocBox API docs"
+          cmd: docbox generate source=. mapping=myApp strategy-outputDir=docs excludes=coldbox|testbox|modules|docbox strategy-projectTitle="My Awesome App"
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "📘 DOC: Auto-generate DocBox Demo App docs"
