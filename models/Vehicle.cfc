@@ -55,9 +55,7 @@ component accessors="true" {
      * 
      * @throws NoSuchFoo
      */
-    public void method testTheDocs(){
-
+    public void function fooException(){
         throw( message = "No such foo!", type = "NoSuchFoo" );
-
     }
 }
