@@ -49,4 +49,15 @@ component accessors="true" {
         var data = cfhttp( url="#variables.apiURL#/getmanufacturerdetails/#arguments.manufacturer#?format=#arguments.format#" );
         return deserializeJSON( data.fileContent );
     }
+
+    /**
+     * Tests the documentation build
+     * 
+     * @throws NoSuchFoo
+     */
+    public void method testTheDocs(){
+
+        throw( message = "No such foo!", type = "NoSuchFoo" );
+
+    }
 }
