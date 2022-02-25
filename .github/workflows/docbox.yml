@@ -6,7 +6,7 @@ on:
       - master
       - main
     paths:
-      - '**/*.cfc'
+      - '**.cfc'
 
 jobs:
   docs:
