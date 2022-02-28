@@ -5,8 +5,8 @@ on:
     branches:
       - master
       - main
-  paths:
-    - '**.cfc'
+    paths:
+      - '**.cfc'
 
 jobs:
   docs:
