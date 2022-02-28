@@ -41,12 +41,16 @@ component accessors="true" {
     /**
      * Retrieve details for the given manufacturer
      * 
+     * @throws NoSuchFoo
      * @manufacturer Filter by manufacturer name. Must match a manufacturer name in {@see getallmanufacturers} response.
      * @format set the response format to json,csv, or xml.
      * @returns manufacturer data in a `{ results : [] }` format.
      */
     public struct function getManufacturerDetails( required string manufacturer, string format="json" ){
         var data = cfhttp( url="#variables.apiURL#/getmanufacturerdetails/#arguments.manufacturer#?format=#arguments.format#" );
+        if ( isNull( data.fileContent ) ){
+            fooException();
+        }
         return deserializeJSON( data.fileContent );
     }
 
