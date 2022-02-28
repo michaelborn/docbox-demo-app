@@ -1,0 +1,18 @@
+name: DocBox
+
+on: push
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check out the repo code
+        uses: actions/checkout@v2
+
+      - uses: Ortus-Solutions/commandbox-action@v1.0.2
+        with:
+          cmd: docbox generate source=. mapping=demoApp excludes=testbox|coldbox|modules|tests strategy-outputDir=docs strategy-projectTitle=demoApp
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "📖 DOC: Auto-generate DocBox API docs"
